@@ -4,7 +4,7 @@
 (() => {
 "use strict";
 const $ = id => document.getElementById(id);
-const langState = { lang: "ar", theme: "hybrid", category: "webhook", filter: "all", step: 0, selectedId: null };
+const langState = { lang: "ar", theme: "hybrid", category: "webhook", filter: "all", search: "", showAll: false, step: 0, selectedId: null };
 const I = {
 ar: {
 skip:"تجاوز التنقل إلى المحتوى",ribbon:"V13 / تجربة تصميم مستقلة — ليست المتجر المباشر ولا تتصل بالدفع",
@@ -20,6 +20,7 @@ diagnosticKicker:"02 / شاهد الفرق",diagnosticTitle:"التفسير قب
 consoleMode:"بدون شبكة",synthetic:"مثال اصطناعي",expectedLabel:"العقد المتوقع",resetDemo:"أعد التجربة",localPrivacy:"تعمل القواعد داخل متصفحك، بلا إرسال بيانات أو مفاتيح API.",
 resultHeading:"ما الذي نعرفه؟",remoteUnknownTitle:"الأثر الحقيقي: غير معروف",remoteUnknownDesc:"لم ننفّذ استدعاءً خارجيًا ولا عملية دفع. نجاح المحاكاة لا يثبت إصلاح نظام حقيقي.",nextStepLabel:"الخطوة المناسبة",demoFoot:"هذه تجربة تفسير محلية، وليست شهادة أمن أو نتيجة تسليم.",advancedLab:"مختبر Drift Lens الكامل",
 catalogKicker:"03 / من المشكلة إلى الخدمة",catalogTitle:"خدمات واضحة، لا وعود غامضة.",catalogDesc:"منتجات مختارة من الكتالوج العام. الأسعار المعروضة مرجعية من 20 أكتوبر 2026، ولا تمثل تأكيدًا لإتاحة الدفع.",
+searchLabel:"ابحث داخل الخدمات المنشورة",searchHelp:"بحث محلي في أسماء الخدمات وأوصافها فقط؛ لا يُرسل ما تكتبه للخارج.",searchPlaceholder:"ابحث عن خدمة: MCP، Webhook…",catalogShowAll:"عرض جميع الخدمات الـ41",catalogShowLess:"عرض الخدمات المختارة",catalogNoResults:"لا توجد خدمة مطابقة. جرّب كلمة أخرى أو اختر فئة مختلفة.",catalogResultCount:"عرض {n} من {total} خدمة",
 filterAll:"الكل",filterPayment:"الدفع وx402",filterAuth:"الواجهات والدخول",filterWebhook:"الربط والأتمتة",filterAgent:"الوكلاء",detailKicker:"خدمة مختارة / عرض تجريبي",viewOfficial:"افتح التفاصيل في المتجر الرسمي",externalLinkNote:"ستنتقل إلى المتجر المباشر. لا تبدأ دفعًا اعتمادًا على هذا العرض التجريبي.",
 catalogFooter:"لا تعرض النسخة التجريبية شراءً أو حجوزات. تحقق من توافر الخدمة وشروطها في الموقع الرسمي.",allServices:"استعرض الكتالوج العام",comingSoonTitle:"قيد التطوير / لا يمكن الشراء",
 compareKicker:"04 / قرار التصميم",compareTitle:"هوية واحدة. تجربتان.",compareDesc:"اختبر بنفسك: أسلوب هجين بعرض تحريري فاتح، أو نسخة داكنة كاملة. المحتوى والسلوك والمنتجات لا تتغيّر.",
@@ -52,6 +53,7 @@ diagnosticKicker:"02 / SEE THE DIFFERENCE",diagnosticTitle:"Explain before you p
 consoleMode:"No network",synthetic:"Synthetic example",expectedLabel:"Expected contract",resetDemo:"Reset demo",localPrivacy:"Checks run in your browser. No payloads or API keys leave this page.",
 resultHeading:"What do we actually know?",remoteUnknownTitle:"Real-world effect: unknown",remoteUnknownDesc:"No remote call or payment was made. A local pass is not proof that your real system is fixed.",nextStepLabel:"Relevant next step",demoFoot:"This is a local explanation demo, not a security certificate or proof of service delivery.",advancedLab:"Open full Drift Lens lab",
 catalogKicker:"03 / FROM PROBLEM TO SERVICE",catalogTitle:"Clear scope. No vague promises.",catalogDesc:"Selected services from the public catalog. Prices are reference listings as of Oct 20, 2026, not confirmation that checkout works.",
+searchLabel:"Search listed services",searchHelp:"Local search across service names and descriptions only. Nothing you type is sent to a server.",searchPlaceholder:"Search: MCP, Webhook, API…",catalogShowAll:"Show all 41 services",catalogShowLess:"Show featured services",catalogNoResults:"No matching service. Try another keyword or category.",catalogResultCount:"Showing {n} of {total} services",
 filterAll:"All",filterPayment:"Payments & x402",filterAuth:"APIs & access",filterWebhook:"Integration & automation",filterAgent:"Agents",detailKicker:"SELECTED SERVICE / DESIGN PREVIEW",viewOfficial:"Open official service details",externalLinkNote:"This opens the live storefront. Do not rely on this preview to authorize payment.",
 catalogFooter:"This preview does not offer purchases or bookings. Verify service availability, terms and checkout on the official site.",allServices:"View full public catalog",comingSoonTitle:"IN DEVELOPMENT / NOT FOR PURCHASE",
 compareKicker:"04 / DESIGN DECISION",compareTitle:"One identity. Two directions.",compareDesc:"Try the hybrid editorial palette or full dark mode. Content, features, and service information remain unchanged.",
@@ -165,6 +167,7 @@ function showTranslation(){
  $("langToggle").firstChild.textContent=langState.lang==="ar"?"EN ":"ع ";
  $("langToggle").setAttribute("aria-label",langState.lang==="ar"?"EN — Switch language to English":"ع — التبديل إلى العربية");
  $("menuToggle").setAttribute("aria-label",t($("menuToggle").getAttribute("aria-expanded")==="true"?"menuClose":"menuLabel"));
+ $("catalogSearch").placeholder=t("searchPlaceholder");
  document.title=langState.lang==="ar"?"NAIF GRAVITY — تجربة التصميم V13":"NAIF GRAVITY — V13 Design Shadow";
  renderProblem(); renderScenario(); renderProducts(); renderDetail();
 }
@@ -239,6 +242,9 @@ function step(){
 function setFilter(filter){
  if(!["all",...CATEGORIES].includes(filter))return;
  langState.filter=filter;
+ langState.search="";
+ langState.showAll=false;
+ $("catalogSearch").value="";
  document.querySelectorAll("[data-filter]").forEach(el=>el.setAttribute("aria-pressed",String(el.dataset.filter===filter)));
  renderProducts();
 }
@@ -262,17 +268,50 @@ function serviceCard(p){
  btn.addEventListener("click",()=>{langState.selectedId=p.id;renderProducts();renderDetail();scrollToId("productDetail");});
  return btn;
 }
+// Private, deterministic service discovery: the query is never sent off-device.
+const CATEGORY_SEARCH_TERMS={
+ payment:"دفع مدفوعات محفظه شبكه x402 web3 wallet payment blockchain usdc base",
+ auth:"api auth authentication مصادقه دخول خادم سيرفر بيانات json استجابه توكن",
+ webhook:"webhook n8n automation اتمته ربط اشعارات سير عمل تدفق",
+ agent:"mcp a2a agent tool وكلاء وكيل اداه ادوات"
+};
+function normalizeSearch(text){
+ return String(text).toLocaleLowerCase()
+   .replace(/[\u064b-\u065f\u0670\u0640]/g,"")
+   .replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه")
+   .replace(/[^\p{L}\p{N}]+/gu," ").trim();
+}
+function catalogMatches(p,q){
+ if(!q)return true;
+ const text=normalizeSearch([p.id,p.name,p.ar,p.en,CATEGORY_SEARCH_TERMS[p.category]||""].join(" "));
+ return q.split(/\s+/).every(word=>text.includes(word));
+}
+function visibleProducts(){
+ const query=normalizeSearch(langState.search);
+ return PRODUCTS.filter(p=>{
+  if(langState.filter!=="all" && p.category!==langState.filter)return false;
+  if(query)return catalogMatches(p,query);
+  return langState.filter!=="all" || langState.showAll || FEATURED_IDS.has(p.id);
+ });
+}
 function renderProducts(){
- const grid=$("productGrid"); grid.replaceChildren();
- const selected=PRODUCTS.filter(p=>langState.filter!=="all" ? p.category===langState.filter : FEATURED_IDS.has(p.id));
- selected.forEach(p=>grid.append(serviceCard(p)));
- $("catalogCount").textContent=t("catalogSelected",{n:String(selected.length).padStart(2,"0")});
+ const grid=$("productGrid");grid.replaceChildren();
+ const selected=visibleProducts();
+ if(selected.length===0){
+  const empty=make("div","product-placeholder",t("catalogNoResults"));
+  empty.setAttribute("role","status");grid.append(empty);
+ }else selected.forEach(p=>grid.append(serviceCard(p)));
+ $("catalogCount").textContent=t("catalogResultCount",{n:String(selected.length),total:String(PRODUCTS.length)});
+ const allowAll=langState.filter==="all" && !langState.search.trim();
+ $("catalogShowAll").hidden=!allowAll;
+ $("catalogShowAll").setAttribute("aria-expanded",String(allowAll&&langState.showAll));
+ $("catalogShowAllLabel").textContent=t(langState.showAll?"catalogShowLess":"catalogShowAll");
  renderDetail();
 }
 function renderDetail(){
  const id=langState.selectedId,p=PRODUCTS.find(x=>x.id===id),panel=$("productDetail");
  if(!p){panel.hidden=true;return;}
- if(langState.filter!=="all"&&p.category!==langState.filter){panel.hidden=true;return;}
+ if(!visibleProducts().some(x=>x.id===p.id)){panel.hidden=true;return;}
  panel.hidden=false;
  $("detailTitle").textContent=p.name;
  $("detailDescription").textContent=p[langState.lang];
@@ -293,6 +332,15 @@ document.addEventListener("DOMContentLoaded",()=>{
  document.body.classList.toggle("owner-qa",params.get("qa")==="1");
  document.querySelectorAll(".problem-tile").forEach(btn=>btn.addEventListener("click",()=>setCase(btn.dataset.case)));
  document.querySelectorAll("[data-filter]").forEach(btn=>btn.addEventListener("click",()=>setFilter(btn.dataset.filter)));
+ $("catalogSearch").addEventListener("input",event=>{
+  langState.search=event.target.value.slice(0,64);
+  renderProducts();
+ });
+ $("catalogShowAll").addEventListener("click",()=>{
+  if(langState.filter!=="all"||langState.search.trim())return;
+  langState.showAll=!langState.showAll;
+  renderProducts();
+ });
  document.querySelectorAll("[data-choose-theme]").forEach(btn=>btn.addEventListener("click",()=>setTheme(btn.dataset.chooseTheme)));
  $("demoAction").addEventListener("click",step);
  $("demoReset").addEventListener("click",()=>{langState.step=0;renderScenario();});
