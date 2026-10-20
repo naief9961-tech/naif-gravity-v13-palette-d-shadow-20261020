@@ -163,7 +163,7 @@ function showTranslation(){
  document.documentElement.dir=langState.lang==="ar"?"rtl":"ltr";
  document.querySelectorAll("[data-i18n]").forEach(n=>{n.textContent=t(n.dataset.i18n);});
  $("langToggle").firstChild.textContent=langState.lang==="ar"?"EN ":"ع ";
- $("langToggle").setAttribute("aria-label",t(langState.lang==="ar"?"langSwitch":"langSwitchBack"));
+ $("langToggle").setAttribute("aria-label",langState.lang==="ar"?"EN — Switch language to English":"ع — التبديل إلى العربية");
  $("menuToggle").setAttribute("aria-label",t($("menuToggle").getAttribute("aria-expanded")==="true"?"menuClose":"menuLabel"));
  document.title=langState.lang==="ar"?"NAIF GRAVITY — تجربة التصميم V13":"NAIF GRAVITY — V13 Design Shadow";
  renderProblem(); renderScenario(); renderProducts(); renderDetail();
@@ -245,7 +245,7 @@ function setFilter(filter){
 function serviceCard(p){
  const btn=make("button","product-card");
  btn.type="button";btn.dataset.product=p.id;
- btn.setAttribute("aria-label",t("cardView")+": "+p.name);
+ // The visible card text is also its accessible button name; no mismatched aria-label.
  if(langState.selectedId===p.id)btn.classList.add("is-selected");
  const top=make("div","product-overline");
  const c=make("span","",t("filter"+p.category[0].toUpperCase()+p.category.slice(1)));
