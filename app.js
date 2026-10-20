@@ -23,7 +23,7 @@ catalogKicker:"03 / من المشكلة إلى الخدمة",catalogTitle:"خد�
 filterAll:"الكل",filterPayment:"الدفع وx402",filterAuth:"الواجهات والدخول",filterWebhook:"الربط والأتمتة",filterAgent:"الوكلاء",detailKicker:"خدمة مختارة / عرض تجريبي",viewOfficial:"افتح التفاصيل في المتجر الرسمي",externalLinkNote:"ستنتقل إلى المتجر المباشر. لا تبدأ دفعًا اعتمادًا على هذا العرض التجريبي.",
 catalogFooter:"لا تعرض النسخة التجريبية شراءً أو حجوزات. تحقق من توافر الخدمة وشروطها في الموقع الرسمي.",allServices:"استعرض الكتالوج العام",comingSoonTitle:"قيد التطوير / لا يمكن الشراء",
 compareKicker:"04 / قرار التصميم",compareTitle:"هوية واحدة. تجربتان.",compareDesc:"اختبر بنفسك: أسلوب هجين بعرض تحريري فاتح، أو نسخة داكنة كاملة. المحتوى والسلوك والمنتجات لا تتغيّر.",
-hybridTitle:"هجين تحريري",hybridDesc:"افتتاحية داكنة، كتالوج فاتح",nightTitle:"كحلي كامل",nightDesc:"هوية داكنة في كل الأقسام",selected:"محدد",compareNoteTitle:"كيف سنختار؟",compareNote:"يجب أن يفهم 4 من 5 مستخدمين مستقلين ما يقدمه المتجر خلال خمس ثوانٍ، ثم يجدون خدمتهم دون مساعدة. لم تُجر هذه الدراسة بعد.",
+hybridTitle:"D / هجين موحّد",hybridDesc:"حد نحاسي، كتالوج حجري",nightTitle:"A / كحلي كامل",nightDesc:"خيار مقارنة المالك فقط",selected:"محدد",compareNoteTitle:"كيف سنختار؟",compareNote:"يجب أن يفهم 4 من 5 مستخدمين مستقلين ما يقدمه المتجر خلال خمس ثوانٍ، ثم يجدون خدمتهم دون مساعدة. لم تُجر هذه الدراسة بعد.",
 trustKicker:"لا نبيع وهماً",trustTitle:"نعرف أين تنتهي التجربة.",trustDesc:"المصداقية جزء من التصميم. نفرّق بين نجاح اختبار محلي وبين سلامة نظام فعلي أو معالجة مدفوعات.",officialSite:"الموقع الرسمي",
 trustOneTitle:"معروض هنا فعلًا",trustOne:"تصميم متجاوب، قوائم خدمات مختارة، فحص محلي ببيانات اصطناعية، ومقارنة تصميمين.",
 trustTwoTitle:"لم نتحقق منه",trustTwo:"سلوك أنظمة العملاء، قبول مدفوعات حقيقية، أو تسليم خدمة عن بُعد.",
@@ -39,7 +39,7 @@ priceLabel:"سعر منشور · مرجعي",priceUnknown:"لا سعر مؤكد"
 paymentNoCard:"لم نجد منتج دفع x402 مستقلاً بسعر مؤكد في الفهرس العام الحالي.",paymentNoCardDesc:"المثال يشرح فحص بنية بيانات دفع اصطناعية فقط؛ راجع الكتالوج الرسمي أو تواصل عبر قنوات المتجر المتاحة دون إرسال أسرار.",viewFullCatalog:"استعرض الكتالوج العام",catalogSelected:"{n} خدمات مختارة",menuLabel:"فتح القائمة",menuClose:"إغلاق القائمة",langSwitch:"Switch language to English",langSwitchBack:"التبديل إلى العربية"
 },
 en: {
-skip:"Skip to main content",ribbon:"V13 / independent design preview — not the live storefront and no payment connection",
+skip:"Skip to main content",ribbon:"V13 / palette D design preview — separate from the live store, no payments",
 navProblems:"Your problem",navDemo:"Live demo",navServices:"Services",navComparison:"Compare designs",
 heroEyebrow:"RESCUE ENGINEERING · FOR HUMANS AND AGENTS",heroTitle1:"When systems break,",heroTitle2:"know where to start.",
 heroLead:"Payments, access, integrations and AI agents. Find the failure, understand the next step, and discover the right service without the guesswork.",
@@ -55,7 +55,7 @@ catalogKicker:"03 / FROM PROBLEM TO SERVICE",catalogTitle:"Clear scope. No vague
 filterAll:"All",filterPayment:"Payments & x402",filterAuth:"APIs & access",filterWebhook:"Integration & automation",filterAgent:"Agents",detailKicker:"SELECTED SERVICE / DESIGN PREVIEW",viewOfficial:"Open official service details",externalLinkNote:"This opens the live storefront. Do not rely on this preview to authorize payment.",
 catalogFooter:"This preview does not offer purchases or bookings. Verify service availability, terms and checkout on the official site.",allServices:"View full public catalog",comingSoonTitle:"IN DEVELOPMENT / NOT FOR PURCHASE",
 compareKicker:"04 / DESIGN DECISION",compareTitle:"One identity. Two directions.",compareDesc:"Try the hybrid editorial palette or full dark mode. Content, features, and service information remain unchanged.",
-hybridTitle:"Editorial hybrid",hybridDesc:"Dark opening, light service catalog",nightTitle:"Full midnight",nightDesc:"Dark design throughout",selected:"Selected",compareNoteTitle:"How will we choose?",compareNote:"At least 4 out of 5 independent users must explain the store within five seconds and find a relevant service unaided. This study has not yet happened.",
+hybridTitle:"D / Refined hybrid",hybridDesc:"Copper chapter line, stone catalog",nightTitle:"A / All dark",nightDesc:"Owner-only comparison",selected:"Selected",compareNoteTitle:"How will we choose?",compareNote:"At least 4 out of 5 independent users must explain the store within five seconds and find a relevant service unaided. This study has not yet happened.",
 trustKicker:"NO MAKE-BELIEVE RESULTS",trustTitle:"We know where the demo ends.",trustDesc:"Credibility is part of design. Local simulations are not equivalent to real-world safety, checkout or delivery.",officialSite:"Official website",
 trustOneTitle:"What this preview demonstrates",trustOne:"Responsive design, curated service navigation, synthetic local validation and design comparison.",
 trustTwoTitle:"What remains unverified",trustTwo:"Real customer systems, live payment acceptance, and remote delivery of purchased services.",
@@ -290,6 +290,7 @@ document.addEventListener("DOMContentLoaded",()=>{
  const params=new URLSearchParams(location.search);
  if(params.get("lang")==="en")langState.lang="en";
  const initialTheme=params.get("theme")==="night"?"night":"hybrid";
+ document.body.classList.toggle("owner-qa",params.get("qa")==="1");
  document.querySelectorAll(".problem-tile").forEach(btn=>btn.addEventListener("click",()=>setCase(btn.dataset.case)));
  document.querySelectorAll("[data-filter]").forEach(btn=>btn.addEventListener("click",()=>setFilter(btn.dataset.filter)));
  document.querySelectorAll("[data-choose-theme]").forEach(btn=>btn.addEventListener("click",()=>setTheme(btn.dataset.chooseTheme)));

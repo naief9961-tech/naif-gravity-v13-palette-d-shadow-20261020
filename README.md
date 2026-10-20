@@ -1,10 +1,12 @@
-# NAIF Gravity V13 — design shadow
+# NAIF Gravity V13 Palette D — Independent Shadow
 
-Independent static design prototype; not the production storefront. Arabic/English, editorial hybrid/full night A/B, synthetic local-only contract mismatch demonstration, public-catalog service guidance.
+This is a standalone public static preview of the refined-hybrid D color treatment from the design council discussion on 2026-10-20. It is not the production store. No checkout, wallet flow, account, customer input or payment system is enabled.
 
-**Safety:** No checkout, accounts, customer data collection, model API calls or production edits. Do not input secrets. Catalog prices are only a dated reference and may change. A passing local fixture is not proof of payment or delivery. No independent 5-user study has occurred.
+- Hero and header: deep navy, with a deliberate 2px copper chapter rule before editorial services.
+- Catalog: warm stone with ivory service cards, dark body text and high-contrast copper text accents.
+- Owner preview: add ?qa=1 for a color comparison, or ?qa=1&theme=night for the all-dark A variant. Controls are hidden from ordinary visitors, not protected by authentication.
+- Static bilingual Arabic/English HTML/CSS/JS and hardcoded synthetic example, with 41 services from a dated public catalog snapshot.
+- Existing V13 Shadow and naifgravity.com remain unchanged.
+- No additional recurring service subscription.
 
-**Development:** index.html, style.css, app.js. No external libraries. GitHub Pages public preview only; `noindex` is advisory, not access control.
-
-## Catalog sync 2026-10-20
-The 41 public listings and their nominal USD prices come from a read-only snapshot of https://naifgravity.com/api/products, catalog version V8.8.3. All 41 are searchable by category in the preview; the All view keeps ten featured cards visible. No checkout request or customer data is sent.
+See PALETTE_D_DESIGN_GATE_AR.md for the palette, contrast calculations and QA requirements. Production release is not authorized.

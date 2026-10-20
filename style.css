@@ -1,5 +1,5 @@
 /* NAIF GRAVITY V13 — isolated static design shadow. No production styles. */
-:root{color-scheme:light;--page:#f4f2ed;--page-alt:#ebe9e3;--card:#fffefa;--card-soft:#f7f4ef;--ink:#15202c;--sub:#596473;--line:#d9d7d0;--gold:#b87e53;--gold-dark:#845436;--gold-light:#f0c79e;--accent-soft:#f4e9dc;--accent-ink:#5c3624;--white:#fff7ee;--dark:#0b121b;--easing:cubic-bezier(.2,.8,.2,1)}
+:root{color-scheme:light;--page:#ebe7df;--page-alt:#e5e0d6;--card:#f8f6f1;--card-soft:#f1ede5;--ink:#15202c;--sub:#4e5a66;--line:#ccc7bc;--gold:#b87333;--gold-dark:#8f5323;--gold-light:#f0c79e;--accent-soft:#eee0cd;--accent-ink:#57351c;--white:#fff7ee;--dark:#0b121b;--easing:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:94px}
 body{margin:0;font:400 16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Tahoma,Arial,sans-serif;background:var(--page);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -84,7 +84,7 @@ html[dir=rtl] .btn svg,html[dir=rtl] .tile-end svg{transform:rotate(180deg)}
 .scene-bottom div{display:inline-flex;align-items:center;gap:9px}
 .scene-pulse{width:7px;height:7px;background:#e5bb8c;border-radius:50%}
 .scene-bottom strong{font:11px ui-monospace,Menlo,monospace;color:#e9b88f;letter-spacing:.08em}
-.path-strip{background:#192430;color:#dfc0a3}
+.path-strip{background:#0b121b;color:#dfc0a3;border-bottom:2px solid #b87333}
 .path-inner{display:flex;align-items:center;gap:18px;padding-block:18px;font-size:11px;font-weight:720;letter-spacing:.015em}
 .path-inner b{font-weight:400;color:#8194a4}
 .path-strip-end{margin-inline-start:auto;letter-spacing:.17em;font:9px ui-monospace,Menlo,monospace;color:#9dacba}
@@ -407,4 +407,25 @@ html[dir=ltr] .detail-panel,.comparison-note{text-align:left}
  .hero h1,.hero-gold{color:#111}
  .hero-scene{display:none}
  .section{padding-block:24px}
+}
+
+/* NAIF V13 palette D — copper-chapter line, no muddy gradient.
+   Owner-only comparison controls remain accessible with ?qa=1.
+   The default public preview has one cohesive palette and no A/B switches. */
+body:not(.owner-qa) #compare,
+body:not(.owner-qa) #mainNav a[href="#compare"]{display:none!important}
+body.theme-hybrid .problem-tile,
+body.theme-hybrid .product-card{position:relative;overflow:hidden}
+body.theme-hybrid .problem-tile::before,
+body.theme-hybrid .product-card::before{content:"";position:absolute;top:0;inset-inline-start:20px;width:32px;height:2px;background:#b87333;border-radius:0 0 2px 2px;pointer-events:none}
+body.theme-hybrid .section-kicker{color:#8f5323}
+body.theme-hybrid .problem-tile .tile-end,
+body.theme-hybrid .product-card .card-link,
+body.theme-hybrid .product-card .product-overline{color:#8f5323}
+body.theme-hybrid .section-header h2{color:#15202c}
+body.theme-hybrid .comparison-note{border-inline-start-color:#b87333}
+.theme-preview.preview-hybrid{background:#ebe7df}
+@media (prefers-reduced-motion:reduce){
+  body.theme-hybrid .problem-tile::before,
+  body.theme-hybrid .product-card::before{transition:none!important}
 }
