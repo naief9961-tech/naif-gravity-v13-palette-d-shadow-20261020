@@ -42,7 +42,7 @@ svg{display:block;flex-shrink:0}
 .hero-copy{position:relative;z-index:2}
 .eyebrow{display:flex;align-items:center;gap:13px;color:#e3b482;letter-spacing:.09em;font-size:12px;font-weight:780}
 .eyebrow-line{width:31px;height:2px;background:#e3b482}
-.hero h1{font-size:clamp(3.3rem,5.6vw,5.2rem);line-height:1.15;letter-spacing:-.064em;font-weight:780;margin:29px 0 25px;max-width:720px;text-wrap:balance}
+.hero h1{font-size:clamp(3rem,4.3vw,4.25rem);line-height:1.19;letter-spacing:-.064em;font-weight:780;margin:29px 0 25px;max-width:720px;text-wrap:balance}
 .hero h1 span{display:block}
 .hero-gold{color:#f0c79e}
 .hero-lead{color:#bfc9d4;max-width:590px;margin:0;font-size:17px;line-height:2}
