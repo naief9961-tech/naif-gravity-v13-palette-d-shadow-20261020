@@ -270,10 +270,15 @@ function serviceCard(p){
 }
 // Private, deterministic service discovery: the query is never sent off-device.
 const CATEGORY_SEARCH_TERMS={
- payment:"دفع مدفوعات محفظه شبكه x402 web3 wallet payment blockchain usdc base",
- auth:"api auth authentication مصادقه دخول خادم سيرفر بيانات json استجابه توكن",
- webhook:"webhook n8n automation اتمته ربط اشعارات سير عمل تدفق",
- agent:"mcp a2a agent tool وكلاء وكيل اداه ادوات"
+ payment:"دفع مدفوعات محفظه محافظ شبكه شبكات ماليه payments wallet",
+ auth:"مصادقه دخول خادم سيرفر بيانات استجابه توكن authorization",
+ webhook:"اتمته ربط اشعارات سير عمل تدفق automation workflow",
+ agent:"وكلاء وكيل اداه ادوات agents tooling"
+};
+const PRODUCT_SEARCH_ALIASES={
+ "automation-rescue":"n8n خرائط حقول",
+ "x402-network-repair":"network mismatch base usdc",
+ "mcp-tool-mini":"مخطط اداة"
 };
 function normalizeSearch(text){
  return String(text).toLocaleLowerCase()
@@ -283,7 +288,7 @@ function normalizeSearch(text){
 }
 function catalogMatches(p,q){
  if(!q)return true;
- const text=normalizeSearch([p.id,p.name,p.ar,p.en,CATEGORY_SEARCH_TERMS[p.category]||""].join(" "));
+ const text=normalizeSearch([p.id,p.name,p.ar,p.en,PRODUCT_SEARCH_ALIASES[p.id]||"",CATEGORY_SEARCH_TERMS[p.category]||""].join(" "));
  return q.split(/\s+/).every(word=>text.includes(word));
 }
 function visibleProducts(){
