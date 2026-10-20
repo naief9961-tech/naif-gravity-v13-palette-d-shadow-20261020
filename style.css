@@ -535,3 +535,13 @@ body.theme-night .catalog-search:focus-within,body.theme-night .catalog-all-btn:
  .catalog-search-tools .catalog-count{order:1;margin-inline-start:0;font-size:12px}
  .catalog-all-btn{order:2;margin-inline-start:auto;font-size:12px;min-height:46px}
 }
+
+
+/* Keyboard and assistive-tech navigation: preserve a visible focus target. */
+#detailTitle:focus-visible,
+.section-header h2:focus-visible,
+#main:focus-visible{outline:3px solid var(--gold-dark);outline-offset:5px;border-radius:3px}
+#productDetail{scroll-margin-top:105px}
+@media(max-width:580px){
+ #productDetail{scroll-margin-top:86px}
+}

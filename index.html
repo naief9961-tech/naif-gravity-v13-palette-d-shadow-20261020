@@ -34,7 +34,7 @@
   <div class="nav-actions"><button class="lang-toggle" type="button" id="langToggle" aria-label="Switch language to English" lang="en">EN <span aria-hidden="true">↗</span></button><button class="menu-toggle" type="button" id="menuToggle" aria-controls="mainNav" aria-expanded="false" aria-label="فتح القائمة"><span></span><span></span></button></div>
  </div>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
  <section class="hero" id="top" aria-labelledby="heroTitle">
   <div class="hero-aura" aria-hidden="true"></div>
   <div class="container hero-grid">
@@ -68,7 +68,7 @@
  <div class="path-strip"><div class="container path-inner"><span data-i18n="path1">01 / اختر العطل</span><b aria-hidden="true">→</b><span data-i18n="path2">02 / افهم السبب</span><b aria-hidden="true">→</b><span data-i18n="path3">03 / اعرف الخدمة</span><span class="path-strip-end" dir="ltr">FROM SIGNAL TO SOLUTION</span></div></div>
  <section class="section problems-section" id="problems" aria-labelledby="problemsTitle">
   <div class="container">
-   <div class="section-header"><div><p class="section-kicker" data-i18n="problemsKicker">01 / نقطة البداية</p><h2 id="problemsTitle" data-i18n="problemsTitle">ما الذي توقّف عندك؟</h2></div><p class="section-description" data-i18n="problemsDesc">لا تحتاج أن تعرف أسماء البروتوكولات. اختر المشكلة الأقرب إليك، وسنريك مثالًا صغيرًا ومسار الخدمة المناسب.</p></div>
+   <div class="section-header"><div><p class="section-kicker" data-i18n="problemsKicker">01 / نقطة البداية</p><h2 id="problemsTitle" tabindex="-1" data-i18n="problemsTitle">ما الذي توقّف عندك؟</h2></div><p class="section-description" data-i18n="problemsDesc">لا تحتاج أن تعرف أسماء البروتوكولات. اختر المشكلة الأقرب إليك، وسنريك مثالًا صغيرًا ومسار الخدمة المناسب.</p></div>
    <div class="problem-grid" role="group" aria-label="Choose a problem category">
     <button type="button" class="problem-tile" data-case="payment" aria-pressed="false"><span class="tile-top"><span class="problem-icon"><svg><use href="#pay"/></svg></span><span class="tile-number">01</span></span><strong data-i18n="paymentTitle">الدفع لا يكتمل</strong><span class="tile-desc" data-i18n="paymentDesc">مسار دفع أو x402 غير واضح</span><span class="tile-end"><span data-i18n="selectCategory">استكشف المسار</span><svg aria-hidden="true"><use href="#arrow"/></svg></span></button>
     <button type="button" class="problem-tile" data-case="auth" aria-pressed="false"><span class="tile-top"><span class="problem-icon"><svg><use href="#auth"/></svg></span><span class="tile-number">02</span></span><strong data-i18n="authTitle">الدخول يرفض</strong><span class="tile-desc" data-i18n="authDesc">مفاتيح وأذونات وواجهات API</span><span class="tile-end"><span data-i18n="selectCategory">استكشف المسار</span><svg aria-hidden="true"><use href="#arrow"/></svg></span></button>
@@ -80,7 +80,7 @@
  </section>
  <section class="section diagnostic-section" id="diagnostic" aria-labelledby="diagnosticTitle">
   <div class="container">
-   <div class="section-header"><div><p class="section-kicker" data-i18n="diagnosticKicker">02 / شاهد الفرق</p><h2 id="diagnosticTitle" data-i18n="diagnosticTitle">التفسير قبل الوعد.</h2></div><p class="section-description" data-i18n="diagnosticDesc">تجربة تفاعلية في ثلاث خطوات، بقواعد محلية وعينات مصطنعة. لا تتصل بخادمك ولا تُصلح نظامًا مباشرًا.</p></div>
+   <div class="section-header"><div><p class="section-kicker" data-i18n="diagnosticKicker">02 / شاهد الفرق</p><h2 id="diagnosticTitle" tabindex="-1" data-i18n="diagnosticTitle">التفسير قبل الوعد.</h2></div><p class="section-description" data-i18n="diagnosticDesc">تجربة تفاعلية في ثلاث خطوات، بقواعد محلية وعينات مصطنعة. لا تتصل بخادمك ولا تُصلح نظامًا مباشرًا.</p></div>
    <div class="diagnostic-console">
     <div class="console-bar"><div class="console-leds" aria-hidden="true"><i></i><i></i><i></i></div><span dir="ltr">DRIFT LENS / LOCAL SIMULATION</span><span class="console-mode" data-i18n="consoleMode">بدون شبكة</span></div>
     <div class="console-body">
@@ -106,12 +106,12 @@
  </section>
  <section class="section catalog-section" id="catalog" aria-labelledby="catalogTitle">
   <div class="container">
-   <div class="section-header"><div><p class="section-kicker" data-i18n="catalogKicker">03 / من المشكلة إلى الخدمة</p><h2 id="catalogTitle" data-i18n="catalogTitle">خدمات واضحة، لا وعود غامضة.</h2></div><p class="section-description" data-i18n="catalogDesc">منتجات مختارة من الكتالوج العام. الأسعار المعروضة مرجعية من 20 أكتوبر 2026، ولا تمثل تأكيدًا لإتاحة الدفع.</p></div>
+   <div class="section-header"><div><p class="section-kicker" data-i18n="catalogKicker">03 / من المشكلة إلى الخدمة</p><h2 id="catalogTitle" tabindex="-1" data-i18n="catalogTitle">خدمات واضحة، لا وعود غامضة.</h2></div><p class="section-description" data-i18n="catalogDesc">منتجات مختارة من الكتالوج العام. الأسعار المعروضة مرجعية من 20 أكتوبر 2026، ولا تمثل تأكيدًا لإتاحة الدفع.</p></div>
    <div class="catalog-bar"><div class="filters" role="group" aria-label="Filter services"><button type="button" data-filter="all" aria-pressed="true" data-i18n="filterAll">الكل</button><button type="button" data-filter="payment" aria-pressed="false" data-i18n="filterPayment">الدفع وx402</button><button type="button" data-filter="auth" aria-pressed="false" data-i18n="filterAuth">الواجهات والدخول</button><button type="button" data-filter="webhook" aria-pressed="false" data-i18n="filterWebhook">الربط والأتمتة</button><button type="button" data-filter="agent" aria-pressed="false" data-i18n="filterAgent">الوكلاء</button></div><label class="catalog-search" for="catalogSearch"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="visually-hidden" data-i18n="searchLabel">ابحث داخل الخدمات المنشورة</span><input id="catalogSearch" type="search" name="catalog-keyword" maxlength="64" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ابحث عن خدمة: MCP، Webhook…" aria-describedby="catalogSearchHelp" /></label></div>
    <div class="catalog-search-tools"><p class="catalog-search-help" id="catalogSearchHelp" data-i18n="searchHelp">بحث محلي داخل أسماء الخدمات والأوصاف فقط؛ لا نرسل ما تكتبه للخارج.</p><span id="catalogCount" class="catalog-count" role="status" aria-live="polite" aria-atomic="true">10 / 41</span><button type="button" id="catalogShowAll" class="catalog-all-btn" aria-controls="productGrid" aria-expanded="false"><span id="catalogShowAllLabel" data-i18n="catalogShowAll">عرض جميع الخدمات الـ41</span><span aria-hidden="true">↓</span></button></div>
    <div class="product-grid" id="productGrid" aria-live="off"><noscript>يتطلب عرض بطاقات الخدمات JavaScript. يمكنك تصفح الكتالوج العام في naifgravity.com/services.</noscript></div>
    <section class="detail-panel" id="productDetail" aria-labelledby="detailTitle" hidden>
-    <div class="detail-copy"><p class="section-kicker" data-i18n="detailKicker">خدمة مختارة / عرض تجريبي</p><h3 id="detailTitle"></h3><p id="detailDescription"></p><p id="detailStatus"></p></div>
+    <div class="detail-copy"><p class="section-kicker" data-i18n="detailKicker">خدمة مختارة / عرض تجريبي</p><h3 id="detailTitle" tabindex="-1"></h3><p id="detailDescription"></p><p id="detailStatus"></p></div>
     <div class="detail-action"><span id="detailPrice" class="detail-price"></span><a class="btn btn-dark" id="detailOfficial" target="_blank" rel="noopener noreferrer" href="https://naifgravity.com/services"><span data-i18n="viewOfficial">افتح التفاصيل في المتجر الرسمي</span><span aria-hidden="true">↗</span></a><p data-i18n="externalLinkNote">ستنتقل إلى المتجر المباشر. لا تبدأ دفعًا اعتمادًا على هذا العرض التجريبي.</p></div>
    </section>
    <div class="catalog-footer"><p data-i18n="catalogFooter">لا تعرض النسخة التجريبية شراءً أو حجوزات. تحقق من توافر الخدمة وشروطها في الموقع الرسمي.</p><a href="https://naifgravity.com/services" target="_blank" rel="noopener noreferrer"><span data-i18n="allServices">استعرض الكتالوج العام</span><span aria-hidden="true"> ↗</span></a></div>
@@ -120,7 +120,7 @@
  </section>
  <section class="section compare-section" id="compare" aria-labelledby="compareTitle">
   <div class="container">
-   <div class="section-header"><div><p class="section-kicker" data-i18n="compareKicker">04 / قرار التصميم</p><h2 id="compareTitle" data-i18n="compareTitle">هوية واحدة. تجربتان.</h2></div><p class="section-description" data-i18n="compareDesc">اختبر بنفسك: أسلوب هجين بعرض تحريري فاتح، أو نسخة داكنة كاملة. المحتوى والسلوك والمنتجات لا تتغيّر.</p></div>
+   <div class="section-header"><div><p class="section-kicker" data-i18n="compareKicker">04 / قرار التصميم</p><h2 id="compareTitle" tabindex="-1" data-i18n="compareTitle">هوية واحدة. تجربتان.</h2></div><p class="section-description" data-i18n="compareDesc">اختبر بنفسك: أسلوب هجين بعرض تحريري فاتح، أو نسخة داكنة كاملة. المحتوى والسلوك والمنتجات لا تتغيّر.</p></div>
    <div class="theme-chooser" role="group" aria-label="Design comparison">
     <button type="button" class="theme-choice" data-choose-theme="hybrid" aria-pressed="true"><span class="theme-preview preview-hybrid"><i></i><i></i><i></i></span><span class="theme-copy"><strong data-i18n="hybridTitle">D / هجين موحّد</strong><small data-i18n="hybridDesc">حدّ نحاسي، كتالوج حجري</small></span><span class="theme-selected" data-i18n="selected">محدد</span></button>
     <button type="button" class="theme-choice" data-choose-theme="night" aria-pressed="false"><span class="theme-preview preview-night"><i></i><i></i><i></i></span><span class="theme-copy"><strong data-i18n="nightTitle">A / كحلي كامل</strong><small data-i18n="nightDesc">خيار مقارنة المالك فقط</small></span><span class="theme-selected" data-i18n="selected">محدد</span></button>

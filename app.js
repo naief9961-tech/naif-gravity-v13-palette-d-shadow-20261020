@@ -242,6 +242,7 @@ function step(){
 function setFilter(filter){
  if(!["all",...CATEGORIES].includes(filter))return;
  langState.filter=filter;
+ langState.selectedId=null;
  langState.search="";
  langState.showAll=false;
  $("catalogSearch").value="";
@@ -265,7 +266,11 @@ function serviceCard(p){
  const view=make("span","card-link",t("cardView")+" ↗");
  foot.append(price,view);
  btn.append(top,name,desc,foot);
- btn.addEventListener("click",()=>{langState.selectedId=p.id;renderProducts();renderDetail();scrollToId("productDetail");});
+ btn.addEventListener("click",()=>{
+   langState.selectedId=p.id;
+   renderProducts();
+   focusSelectedService();
+ });
  return btn;
 }
 // Private, deterministic service discovery: the query is never sent off-device.
@@ -324,11 +329,25 @@ function renderDetail(){
  $("detailPrice").textContent="$"+p.price.toFixed(2)+"  ·  "+t("priceLabel");
  $("detailOfficial").href="https://naifgravity.com/service/"+encodeURIComponent(p.id);
 }
+function focusSelectedService(){
+ const panel=$("productDetail");
+ if(panel.hidden)return;
+ // Product buttons are rerendered; keep keyboard and screen-reader users
+ // inside the meaningful service detail instead of dropping to <body>.
+ $("detailTitle").focus({preventScroll:true});
+ scrollToId("productDetail");
+}
 function openRecommended(){
  const caseId=langState.category,found=CASES[caseId].next;
  setFilter(caseId);
- if(found){langState.selectedId=found;renderProducts();renderDetail();scrollToId("productDetail");}
- else scrollToId("catalog");
+ if(found){
+  langState.selectedId=found;
+  renderProducts();
+  focusSelectedService();
+ }else{
+  $("catalogTitle").focus({preventScroll:true});
+  scrollToId("catalog");
+ }
 }
 document.addEventListener("DOMContentLoaded",()=>{
  const params=new URLSearchParams(location.search);
@@ -339,7 +358,19 @@ document.addEventListener("DOMContentLoaded",()=>{
  document.querySelectorAll("[data-filter]").forEach(btn=>btn.addEventListener("click",()=>setFilter(btn.dataset.filter)));
  $("catalogSearch").addEventListener("input",event=>{
   langState.search=event.target.value.slice(0,64);
+  langState.selectedId=null;
   renderProducts();
+ });
+ $("catalogSearch").addEventListener("keydown",event=>{
+  // Escape clears search locally, without moving to another page.
+  if(event.key==="Escape"&&event.currentTarget.value){
+   event.preventDefault();
+   event.stopPropagation();
+   event.currentTarget.value="";
+   langState.search="";
+   langState.selectedId=null;
+   renderProducts();
+  }
  });
  $("catalogShowAll").addEventListener("click",()=>{
   if(langState.filter!=="all"||langState.search.trim())return;
@@ -350,8 +381,26 @@ document.addEventListener("DOMContentLoaded",()=>{
  $("demoAction").addEventListener("click",step);
  $("demoReset").addEventListener("click",()=>{langState.step=0;renderScenario();});
  $("demoService").addEventListener("click",openRecommended);
- $("menuToggle").addEventListener("click",()=>setMenu($("menuToggle").getAttribute("aria-expanded")!=="true"));
- document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+ $("menuToggle").addEventListener("click",event=>{
+  const opening=$("menuToggle").getAttribute("aria-expanded")!=="true";
+  setMenu(opening);
+  // Menu links precede the trigger in DOM order. Keyboard activation
+  // therefore needs deliberate focus transfer into the open menu.
+  if(opening&&event.detail===0){
+   const link=Array.from($("mainNav").querySelectorAll("a"))
+    .find(a=>getComputedStyle(a).display!=="none");
+   if(link)link.focus();
+  }
+ });
+ document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>{
+  const fromMenu=$("menuToggle").getAttribute("aria-expanded")==="true";
+  setMenu(false);
+  if(fromMenu){
+   const destination=document.querySelector(a.getAttribute("href"));
+   const heading=destination?.querySelector("h1,h2");
+   if(heading)heading.focus({preventScroll:true});
+  }
+ }));
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("menuToggle").getAttribute("aria-expanded")==="true"){setMenu(false);$("menuToggle").focus();}});
  $("langToggle").addEventListener("click",()=>{langState.lang=langState.lang==="ar"?"en":"ar";showTranslation();updateParams();});
  showTranslation();setTheme(initialTheme);setFilter("all");
