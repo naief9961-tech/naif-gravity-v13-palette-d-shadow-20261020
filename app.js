@@ -112,8 +112,40 @@ const PRODUCTS=[
 {id:"api-integration-mini",category:"auth",name:"API Integration Mini",price:29,ar:"ربط API محدود ضمن وصف وموافقة مسبقة.",en:"A small API integration under a bounded scope."},
 {id:"mcp-tool-mini",category:"agent",name:"MCP Tool Mini",price:39,ar:"مهمة مصغّرة لواجهة أداة MCP.",en:"A bounded MCP tool implementation or adjustment."},
 {id:"agent-prompt-tooling",category:"agent",name:"AI Agent Prompt + Tooling Tune",price:59,ar:"تحسين محدود لإعداد مطالبة وكيل وأدواته.",en:"A scoped tuning task for agent prompts and tooling."},
-{id:"agent-engineering-sprint",category:"agent",name:"NAIF AI Agent Engineering Sprint",price:219,ar:"تنفيذ هندسي محدود لوكيل وفق التفاصيل المنشورة.",en:"Scoped agent engineering based on the official service listing."}
+{id:"agent-engineering-sprint",category:"agent",name:"NAIF AI Agent Engineering Sprint",price:219,ar:"تنفيذ هندسي محدود لوكيل وفق التفاصيل المنشورة.",en:"Scoped agent engineering based on the official service listing."},
+{"id":"data-factory","category":"webhook","name":"NAIF Data Factory","price":115,"ar":"فحص عينة من بنية البيانات وجودتها دون معالجة المجموعة بالكامل.","en":"Schema and quality sample; no full dataset processing"},
+{"id":"automation-factory","category":"webhook","name":"NAIF Automation Factory","price":179,"ar":"تخطيط سير عمل مع تجربة محلية محدودة دون تشغيل الإنتاج.","en":"Workflow map and one dry-run; no production execution"},
+{"id":"json-normalizer","category":"auth","name":"JSON Normalize Mini","price":3,"ar":"معاينة توحيد بيانات JSON على عينة محدودة.","en":"Free normalization preview; paid downloadable V2 artifact"},
+{"id":"csv-schema-audit","category":"webhook","name":"CSV Schema Audit Mini","price":5,"ar":"فحص رؤوس أعمدة CSV وعينة صفوف صغيرة.","en":"Inspect header plus up to 3 rows free"},
+{"id":"data-clean-mini","category":"webhook","name":"Data Clean Mini","price":9,"ar":"معاينة تنظيف عدد محدود من السجلات.","en":"Preview up to 3 records free"},
+{"id":"web3-backend-rescue","category":"payment","name":"NAIF Web3 Backend Rescue","price":129,"ar":"فرز أعطال Backend Web3 ورسم حدودها دون تعديل مباشر.","en":"Safe triage + failure map; no production mutation"},
+{"id":"web3-qa-sprint","category":"payment","name":"NAIF Web3 QA Sprint","price":89,"ar":"خطة محددة لإعادة إنتاج خلل Web3 واختبارات القبول.","en":"Bounded reproduction plan and acceptance-test map"},
+{"id":"agentic-wallet-payments","category":"payment","name":"NAIF Agentic Wallet & Payments Integration","price":179,"ar":"مراجعة مسار مدفوعات ومحفظة لوكيل وحدود التحقق منه.","en":"Payment/wallet flow map and verification boundary"},
+{"id":"trading-agent-infra","category":"payment","name":"NAIF Trading Agent Infrastructure Sprint","price":269,"ar":"تخطيط بنية وكيل تداول وضوابط المخاطر دون ضمان أرباح.","en":"Architecture and risk-control map; no promise of trading returns"},
+{"id":"smart-contract-integration-review","category":"payment","name":"NAIF Smart-Contract Integration Review","price":159,"ar":"مراجعة واجهة دمج عقد ذكي ومخاطرها، وليست تدقيق أمان شاملًا.","en":"Bounded interface/risk map; not a formal security audit or certification"},
+{"id":"telegram-bot-mini","category":"agent","name":"Telegram Bot Mini","price":39,"ar":"تخطيط أو تعديل سير أوامر بوت Telegram ضمن نطاق صغير.","en":"Command/workflow map"},
+{"id":"github-actions-fix","category":"webhook","name":"GitHub Actions Fix","price":24,"ar":"فرز مشكلة سير GitHub Actions بأدلة تشغيل محدودة.","en":"Workflow failure map"},
+{"id":"github-repo-triage","category":"auth","name":"GitHub Repo Triage","price":15,"ar":"تقييم أولي لمستودع GitHub للقراءة فقط.","en":"Read-only repository triage"},
+{"id":"api-response-fix","category":"auth","name":"API Response Fix","price":19,"ar":"مراجعة عقد استجابة API وموضع الخلل المحتمل.","en":"Response contract review"},
+{"id":"docker-health-fix","category":"auth","name":"Docker Healthcheck Fix","price":19,"ar":"مراجعة إعدادات Docker وفحوص الخدمة، دون تعديل إنتاجي.","en":"Configuration-only review"},
+{"id":"backend-bug-fix","category":"auth","name":"Backend Bug Fix Mini","price":29,"ar":"فرز أولي لسبب مشكلة Backend محددة.","en":"Safe root-cause triage"},
+{"id":"web3-rpc-debug","category":"payment","name":"Web3 RPC Debug","price":29,"ar":"تشخيص قراءة فقط لمشكلة اتصال RPC في Web3.","en":"Read-only RPC triage"},
+{"id":"web3-qa-mini","category":"payment","name":"Web3 QA Mini","price":39,"ar":"خريطة مختصرة لاختبارات قبول Web3.","en":"Acceptance-test map"},
+{"id":"database-query-fix","category":"auth","name":"Database Query Fix","price":49,"ar":"مراجعة استعلام قاعدة بيانات وخطته متى توفرت.","en":"Query-plan review where available"},
+{"id":"deployment-rescue-mini","category":"auth","name":"Deployment Rescue Mini","price":69,"ar":"تحديد مسار فشل نشر تقني ضمن نطاق الخدمة.","en":"Deployment failure map"},
+{"id":"treasury-readiness-report","category":"payment","name":"DAO Treasury Readiness Report","price":49,"ar":"تقرير تحضيري لخزينة DAO وحوكمتها اعتمادًا على أدلة قراءة فقط.","en":"Read-only treasury and governance evidence map"},
+{"id":"rpc-reliability-audit","category":"payment","name":"RPC Reliability Audit","price":115,"ar":"تقييم قرائي لثبات واستجابة نقاط RPC.","en":"Read-only endpoint reliability map"},
+{"id":"x402-endpoint-sprint","category":"payment","name":"x402 Endpoint Sprint","price":129,"ar":"تخطيط عقد دفع x402 ومسار استدعاء نقطة النهاية.","en":"Payment contract and endpoint flow map"},
+{"id":"wallet-auth-integration","category":"payment","name":"Wallet Authentication Integration","price":219,"ar":"مراجعة مسار مصادقة المحفظة وحدود الصلاحيات.","en":"Authentication flow and boundary map"},
+{"id":"web3-automation-pilot","category":"payment","name":"Web3 Automation Pilot","price":349,"ar":"تصميم سير أتمتة Web3 وحدود ما يمكن تنفيذه.","en":"Workflow architecture and execution boundary"},
+{"id":"json-validity-check","category":"auth","name":"JSON Validity Check","price":1,"ar":"معاينة صحة JSON على مدخلات صغيرة، دون ادعاء نتائج بعيدة.","en":"Free preview; full validated V2 report after verified payment"},
+{"id":"repair-check-beta","category":"auth","name":"Repair Check · Beta","price":19,"ar":"فحص أولي لإصلاح محدد، وليس ضمانًا لصحة التطبيق بالكامل.","en":"Repair-focused triage; not a whole-program correctness guarantee"},
+{"id":"repair-verification-beta","category":"auth","name":"Deep Repair Verification · Beta","price":49,"ar":"تحقق محدود مستند إلى دليل الإصلاح المقدم ونطاقه.","en":"Scoped verification based on the supplied repair and evidence"},
+{"id":"repair-evidence-receipt","category":"auth","name":"Repair Evidence Receipt","price":69,"ar":"ملخص لأدلة إصلاح محددة، وليس شهادة صحة عامة.","en":"Evidence-backed receipt; no universal correctness claim"},
+{"id":"repair-ci-gate-pilot","category":"auth","name":"Repair CI Gate Pilot","price":115,"ar":"تجربة ربط محدودة لفحص إصلاح في مسار CI.","en":"Pilot integration for one bounded CI repair flow"},
+{"id":"x402-network-repair","category":"payment","name":"x402 UnsupportedNetworkError Repair","price":5,"ar":"تشخيص لفئة خطأ شبكة x402 غير المدعومة؛ لا تطبيق آلي للإصلاح.","en":"Free exact failure-class diagnosis and network-mismatch evidence; patch is not applied automatically"}
 ];
+const FEATURED_IDS=new Set(["webhook-debug-mini", "automation-rescue", "automation-mini", "api-response-shape-check", "endpoint-health-check", "api-fixer", "api-integration-mini", "mcp-tool-mini", "agent-prompt-tooling", "agent-engineering-sprint"]);
 const t=(key,vars={})=>{
  let s=(I[langState.lang]||I.ar)[key]||key;
  return s.replace(/\{(\w+)\}/g,(_,name)=>String(vars[name]??""));
@@ -232,14 +264,8 @@ function serviceCard(p){
 }
 function renderProducts(){
  const grid=$("productGrid"); grid.replaceChildren();
- const selected=PRODUCTS.filter(p=>langState.filter==="all"||p.category===langState.filter);
- if(langState.filter==="payment"){
-  const container=make("div","product-placeholder");
-  container.append(make("strong","",t("paymentNoCard")),make("span","",t("paymentNoCardDesc")));
-  const link=make("a","",t("viewFullCatalog")+" ↗");
-  link.href="https://naifgravity.com/services";link.target="_blank";link.rel="noopener noreferrer";
-  container.append(link);grid.append(container);
- } else selected.forEach(p=>grid.append(serviceCard(p)));
+ const selected=PRODUCTS.filter(p=>langState.filter!=="all" ? p.category===langState.filter : FEATURED_IDS.has(p.id));
+ selected.forEach(p=>grid.append(serviceCard(p)));
  $("catalogCount").textContent=t("catalogSelected",{n:String(selected.length).padStart(2,"0")});
  renderDetail();
 }

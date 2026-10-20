@@ -1,0 +1,377 @@
+{
+  "snapshot_date": "2026-10-20",
+  "catalog_version": "V8.8.3",
+  "source": "https://naifgravity.com/api/products (read-only public snapshot)",
+  "notes": "Published nominal USD prices; no checkout or fulfillment verified by V13 Shadow",
+  "products": [
+    {
+      "id": "api-fixer",
+      "name": "NAIF API Fixer",
+      "price": 79,
+      "eta": "1–2 business days",
+      "demo": "Safe endpoint/repository triage; no code execution",
+      "output": "Root-cause report, patch, tests, delivery bundle",
+      "group": "systems"
+    },
+    {
+      "id": "data-factory",
+      "name": "NAIF Data Factory",
+      "price": 115,
+      "eta": "1–3 business days",
+      "demo": "Schema and quality sample; no full dataset processing",
+      "output": "Cleaned/validated data, report, structured export",
+      "group": "automate"
+    },
+    {
+      "id": "automation-factory",
+      "name": "NAIF Automation Factory",
+      "price": 179,
+      "eta": "2–5 business days",
+      "demo": "Workflow map and one dry-run; no production execution",
+      "output": "Sandboxed script/API/workflow, runbook, acceptance tests",
+      "group": "automate"
+    },
+    {
+      "id": "json-normalizer",
+      "name": "JSON Normalize Mini",
+      "price": 3,
+      "eta": "usually under 2 minutes",
+      "demo": "Free normalization preview; paid downloadable V2 artifact",
+      "output": "V2: sorted JSON, optional string trimming and indentation, duplicate-key warnings, change log, before/after size and SHA-256 receipt; original never mutated",
+      "group": "systems"
+    },
+    {
+      "id": "csv-schema-audit",
+      "name": "CSV Schema Audit Mini",
+      "price": 5,
+      "eta": "usually under 2 minutes",
+      "demo": "Inspect header plus up to 3 rows free",
+      "output": "Schema summary, normalized output, QA receipt",
+      "group": "automate"
+    },
+    {
+      "id": "data-clean-mini",
+      "name": "Data Clean Mini",
+      "price": 9,
+      "eta": "usually under 3 minutes",
+      "demo": "Preview up to 3 records free",
+      "output": "Normalized structured data, QA and checksum",
+      "group": "automate"
+    },
+    {
+      "id": "agent-engineering-sprint",
+      "name": "NAIF AI Agent Engineering Sprint",
+      "price": 219,
+      "eta": "2–5 business days",
+      "demo": "Architecture + tool contract + bounded no-execution proof",
+      "output": "Bounded agent/skill/MCP implementation, tests, runbook, delivery evidence",
+      "group": "agents"
+    },
+    {
+      "id": "web3-backend-rescue",
+      "name": "NAIF Web3 Backend Rescue",
+      "price": 129,
+      "eta": "1–3 business days",
+      "demo": "Safe triage + failure map; no production mutation",
+      "output": "Root cause, bounded fix, regression tests, reliability notes and delivery bundle",
+      "group": "payments"
+    },
+    {
+      "id": "web3-qa-sprint",
+      "name": "NAIF Web3 QA Sprint",
+      "price": 89,
+      "eta": "1–2 business days",
+      "demo": "Bounded reproduction plan and acceptance-test map",
+      "output": "Reproduction, test matrix, regression tests, QA evidence and defect report",
+      "group": "payments"
+    },
+    {
+      "id": "agentic-wallet-payments",
+      "name": "NAIF Agentic Wallet & Payments Integration",
+      "price": 179,
+      "eta": "2–5 business days",
+      "demo": "Payment/wallet flow map and verification boundary",
+      "output": "Wallet/x402/payment integration, verification flow, tests and runbook",
+      "group": "payments"
+    },
+    {
+      "id": "trading-agent-infra",
+      "name": "NAIF Trading Agent Infrastructure Sprint",
+      "price": 269,
+      "eta": "3–7 business days",
+      "demo": "Architecture and risk-control map; no promise of trading returns",
+      "output": "Bounded feeds/execution/risk infrastructure, monitoring, tests and runbook",
+      "group": "payments"
+    },
+    {
+      "id": "smart-contract-integration-review",
+      "name": "NAIF Smart-Contract Integration Review",
+      "price": 159,
+      "eta": "2–4 business days",
+      "demo": "Bounded interface/risk map; not a formal security audit or certification",
+      "output": "Integration-risk review, test plan, interface findings and remediation guidance",
+      "group": "payments"
+    },
+    {
+      "id": "endpoint-health-check",
+      "name": "API Endpoint Health Check",
+      "price": 7,
+      "eta": "same day",
+      "demo": "Bounded public endpoint triage",
+      "output": "Status, latency, headers and concise issue report",
+      "group": "systems"
+    },
+    {
+      "id": "webhook-debug-mini",
+      "name": "Webhook Debug Mini",
+      "price": 12,
+      "eta": "same day",
+      "demo": "Payload/response flow map",
+      "output": "Failure diagnosis and fix guidance",
+      "group": "automate"
+    },
+    {
+      "id": "telegram-bot-mini",
+      "name": "Telegram Bot Mini",
+      "price": 39,
+      "eta": "1–2 business days",
+      "demo": "Command/workflow map",
+      "output": "Small bot flow, setup notes and tests",
+      "group": "agents"
+    },
+    {
+      "id": "mcp-tool-mini",
+      "name": "MCP Tool Mini",
+      "price": 39,
+      "eta": "1–2 business days",
+      "demo": "Tool schema + no-execution proof",
+      "output": "One bounded MCP tool implementation with tests",
+      "group": "agents"
+    },
+    {
+      "id": "github-actions-fix",
+      "name": "GitHub Actions Fix",
+      "price": 24,
+      "eta": "1 business day",
+      "demo": "Workflow failure map",
+      "output": "Bounded workflow patch and validation notes",
+      "group": "automate"
+    },
+    {
+      "id": "api-integration-mini",
+      "name": "API Integration Mini",
+      "price": 29,
+      "eta": "1–2 business days",
+      "demo": "Integration contract map",
+      "output": "Single integration flow, example request/response and test notes",
+      "group": "systems"
+    },
+    {
+      "id": "automation-mini",
+      "name": "Automation Mini",
+      "price": 49,
+      "eta": "1–2 business days",
+      "demo": "Workflow map and dry-run boundary",
+      "output": "Small script/workflow, runbook and tests",
+      "group": "automate"
+    },
+    {
+      "id": "github-repo-triage",
+      "name": "GitHub Repo Triage",
+      "price": 15,
+      "eta": "same day",
+      "demo": "Read-only repository triage",
+      "output": "Issue map, likely root cause and next actions",
+      "group": "systems"
+    },
+    {
+      "id": "api-response-fix",
+      "name": "API Response Fix",
+      "price": 19,
+      "eta": "1 business day",
+      "demo": "Response contract review",
+      "output": "Bounded response-layer patch and validation notes",
+      "group": "systems"
+    },
+    {
+      "id": "docker-health-fix",
+      "name": "Docker Healthcheck Fix",
+      "price": 19,
+      "eta": "1 business day",
+      "demo": "Configuration-only review",
+      "output": "Healthcheck correction and verification steps",
+      "group": "systems"
+    },
+    {
+      "id": "backend-bug-fix",
+      "name": "Backend Bug Fix Mini",
+      "price": 29,
+      "eta": "1–2 business days",
+      "demo": "Safe root-cause triage",
+      "output": "Bounded fix, regression check and delivery notes",
+      "group": "systems"
+    },
+    {
+      "id": "web3-rpc-debug",
+      "name": "Web3 RPC Debug",
+      "price": 29,
+      "eta": "1–2 business days",
+      "demo": "Read-only RPC triage",
+      "output": "RPC failure diagnosis, retry/fallback guidance and test evidence",
+      "group": "payments"
+    },
+    {
+      "id": "web3-qa-mini",
+      "name": "Web3 QA Mini",
+      "price": 39,
+      "eta": "1–2 business days",
+      "demo": "Acceptance-test map",
+      "output": "Reproduction, defect report and focused regression test",
+      "group": "payments"
+    },
+    {
+      "id": "database-query-fix",
+      "name": "Database Query Fix",
+      "price": 49,
+      "eta": "1–2 business days",
+      "demo": "Query-plan review where available",
+      "output": "Corrected query, explanation and validation notes",
+      "group": "systems"
+    },
+    {
+      "id": "agent-prompt-tooling",
+      "name": "AI Agent Prompt + Tooling Tune",
+      "price": 59,
+      "eta": "1–2 business days",
+      "demo": "Failure-pattern analysis",
+      "output": "Bounded prompt/tool contract improvements and test cases",
+      "group": "agents"
+    },
+    {
+      "id": "deployment-rescue-mini",
+      "name": "Deployment Rescue Mini",
+      "price": 69,
+      "eta": "1–2 business days",
+      "demo": "Deployment failure map",
+      "output": "Bounded deployment fix and health verification steps",
+      "group": "systems"
+    },
+    {
+      "id": "treasury-readiness-report",
+      "name": "DAO Treasury Readiness Report",
+      "price": 49,
+      "eta": "1–2 business days",
+      "demo": "Read-only treasury and governance evidence map",
+      "output": "Treasury/payment readiness report",
+      "group": "payments"
+    },
+    {
+      "id": "rpc-reliability-audit",
+      "name": "RPC Reliability Audit",
+      "price": 115,
+      "eta": "1–3 business days",
+      "demo": "Read-only endpoint reliability map",
+      "output": "Failover audit, tests and remediation plan",
+      "group": "payments"
+    },
+    {
+      "id": "x402-endpoint-sprint",
+      "name": "x402 Endpoint Sprint",
+      "price": 129,
+      "eta": "2–4 business days",
+      "demo": "Payment contract and endpoint flow map",
+      "output": "Bounded x402 integration, tests and runbook",
+      "group": "payments"
+    },
+    {
+      "id": "wallet-auth-integration",
+      "name": "Wallet Authentication Integration",
+      "price": 219,
+      "eta": "2–5 business days",
+      "demo": "Authentication flow and boundary map",
+      "output": "Wallet auth integration, tests and security notes",
+      "group": "payments"
+    },
+    {
+      "id": "web3-automation-pilot",
+      "name": "Web3 Automation Pilot",
+      "price": 349,
+      "eta": "3–7 business days",
+      "demo": "Workflow architecture and execution boundary",
+      "output": "Bounded automation pilot and delivery passport",
+      "group": "payments"
+    },
+    {
+      "id": "json-validity-check",
+      "name": "JSON Validity Check",
+      "price": 1,
+      "eta": "usually under 1 minute",
+      "demo": "Free preview; full validated V2 report after verified payment",
+      "output": "V2: syntax location, duplicate-key warnings, safe trailing-comma repair, canonical JSON, inferred schema, before/after proof, CI test snippet and SHA-256 checksum; sample only",
+      "group": "systems"
+    },
+    {
+      "id": "api-response-shape-check",
+      "name": "API Response Shape Check",
+      "price": 2,
+      "eta": "usually under 1 minute",
+      "demo": "Free comparison preview; full V2 report after verified payment",
+      "output": "V2: compare two API JSON samples, identify removed/added fields and type changes, generate sample-based TypeScript and OpenAPI response schemas, with QA receipt; no live endpoint access",
+      "group": "systems"
+    },
+    {
+      "id": "repair-check-beta",
+      "name": "Repair Check · Beta",
+      "price": 19,
+      "eta": "same day",
+      "demo": "Repair-focused triage; not a whole-program correctness guarantee",
+      "output": "Scoped repair-risk check with derived verification targets and concise pass/review result",
+      "group": "systems"
+    },
+    {
+      "id": "repair-verification-beta",
+      "name": "Deep Repair Verification · Beta",
+      "price": 49,
+      "eta": "1 business day",
+      "demo": "Scoped verification based on the supplied repair and evidence",
+      "output": "Repair-derived obligation map, owner-side scoped validation plan, findings and accept/reject-for-scope result",
+      "group": "systems"
+    },
+    {
+      "id": "repair-evidence-receipt",
+      "name": "Repair Evidence Receipt",
+      "price": 69,
+      "eta": "1 business day",
+      "demo": "Evidence-backed receipt; no universal correctness claim",
+      "output": "Evidence receipt binding repair scope, checks performed, environment notes and scoped verdict",
+      "group": "systems"
+    },
+    {
+      "id": "repair-ci-gate-pilot",
+      "name": "Repair CI Gate Pilot",
+      "price": 115,
+      "eta": "1–3 business days",
+      "demo": "Pilot integration for one bounded CI repair flow",
+      "output": "Pilot repair gate with derived obligations, ordered validation schedule and scoped evidence receipt",
+      "group": "systems"
+    },
+    {
+      "id": "x402-network-repair",
+      "name": "x402 UnsupportedNetworkError Repair",
+      "price": 5,
+      "eta": "same day",
+      "demo": "Free exact failure-class diagnosis and network-mismatch evidence; patch is not applied automatically",
+      "output": "Bounded network configuration patch, retest, before/after evidence and signed repair report",
+      "group": "payments"
+    },
+    {
+      "id": "automation-rescue",
+      "name": "Automation Rescue · Webhook Mapping",
+      "price": 19,
+      "eta": "Automated delivery after verified payment",
+      "demo": "Free eligibility check. Only uniquely provable field-path repairs are accepted.",
+      "output": "Corrected field mapping, n8n expressions and before/after fixture evidence; no live deployment",
+      "group": "automate"
+    }
+  ]
+}
