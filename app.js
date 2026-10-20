@@ -398,7 +398,9 @@ document.addEventListener("DOMContentLoaded",()=>{
   if(fromMenu){
    const destination=document.querySelector(a.getAttribute("href"));
    const heading=destination?.querySelector("h1,h2");
-   if(heading)heading.focus({preventScroll:true});
+   // Native anchor navigation may reset focus after the click handler.
+   // Restore it after the browser processes the hash and closes the menu.
+   if(heading)window.requestAnimationFrame(()=>heading.focus({preventScroll:true}));
   }
  }));
  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("menuToggle").getAttribute("aria-expanded")==="true"){setMenu(false);$("menuToggle").focus();}});
